@@ -76,6 +76,7 @@ export type BotProps = {
   fontSize?: number;
   isFullPage?: boolean;
   observersConfig?: observersConfigType;
+  toggleBot: () => void;
 };
 
 const defaultWelcomeMessage = 'Hi there! How can I help?';
@@ -801,6 +802,16 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             >
               <span style={{ 'font-family': 'Poppins, sans-serif' }}>Clear</span>
             </DeleteButton>
+            <button
+              on:click={botProps.toggleBot}
+              type="submit"
+              // class={
+              //   'py-2 px-4 justify-center font-semibold text-white focus:outline-none flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 transition-all filter hover:brightness-90 active:brightness-75 chatbot-button '}
+              // style={{ background: 'transparent', border: 'none' }}
+              title="close window"
+            >
+              CloseChat
+            </button>
           </div>
         ) : null}
         <div class="flex flex-col w-full h-full justify-start z-0">
